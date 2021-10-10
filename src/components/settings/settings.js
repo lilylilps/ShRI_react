@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import MaskedInput from "react-text-mask";
+
+import { uploadSettings } from "../../store/actions/settings.action";
 
 import Button from '../button/button';
 import useInput from "../../hooks/useInput";
@@ -20,6 +23,7 @@ function Settings() {
     const [disabledButton, setDisabledButton] = useState(false);
     const [modalIsOpen, setIsOpen] = useState(false);
 
+    const dispatch = useDispatch();
     const history = useHistory();
 
     function handleFormSubmit(e) {
@@ -46,7 +50,7 @@ function Settings() {
             const submitResult = Math.floor(Math.random() * 2);
             setDisabledButton(false);
             if (!!submitResult) {
-                localStorage.setItem("settings", JSON.stringify(settings));
+                dispatch(uploadSettings(settings));
                 history.push("/");
             } else {
                 setIsOpen(true);
@@ -138,7 +142,14 @@ function Settings() {
                     </Link>
                 </div>
 
-                {modalIsOpen && <Alert title={"Failed to clone repository"} subtitle={"Please, try again."} duration={2000} />}
+                {modalIsOpen &&
+                    <Alert
+                        title={"Failed to clone repository"}
+                        subtitle={"Please, try again."}
+                        onClose={setIsOpen}
+                        duration={2000}
+                    />
+                }
             </form>
         </>
     );

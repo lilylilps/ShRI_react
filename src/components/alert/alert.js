@@ -1,15 +1,29 @@
 import Modal from 'react-modal';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './alert.css';
 
-function Alert({ title, subtitle, duration = 3000 }) {
+function Alert({ title, subtitle, onClose, duration = 3000 }) {
     const [modalIsOpen, setIsOpen] = useState(true);
 
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => {
+        onClose();
+        setIsOpen(false);
+    }
 
-    setTimeout(() => {
-        closeModal();
-    }, duration);
+    useEffect(() => {
+        let isMounted = true;
+        setTimeout(() => {
+            if (isMounted) {
+                onClose();
+                setIsOpen(false);
+            }
+        }, duration);
+        return () => {
+            isMounted = false;
+        };
+    }, [duration, onClose]);
+
+
 
     return (
         <Modal

@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import image from "../../icons/start-screen.svg";
 import icon from '../../icons/settings-icon.svg';
 import Button from '../button/button';
@@ -7,7 +9,7 @@ import History from '../history/history';
 import './home.css';
 
 function Home() {
-    const settings = localStorage.getItem("settings");
+    const settings = useSelector(state => state.settingsState.settings);
 
     return (
         <>

@@ -1,19 +1,31 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Button from '../button/button';
 import HistoryItem from './historyItem/historyItem';
 import BuildModal from './buildModal/buildModal';
 
+import {loadHistory} from '../../store/actions/history.action'
+
 import icon from '../../icons/settings-icon.svg';
 import run from '../../icons/run.svg';
-import initialCommits from './initialCommits';
 
 import './history.css';
 
+
 function History() {
-    const settings = JSON.parse(localStorage.getItem("settings"));
     const [modalIsOpen, setIsOpen] = useState(false);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadHistory());
+    }, [dispatch])
+
+
+    const initialCommits = useSelector(state => state.historyState.commits);
+    const settings = useSelector(state => state.settingsState.settings);
 
     const toggleOpen = (isOpen) => setIsOpen(isOpen);
 
@@ -21,7 +33,7 @@ function History() {
         <div className="history">
             <header className="history__header">
                 <h1 className="history__repository-name">
-                    {settings.repositoryName}
+                    {settings?.repositoryName}
                 </h1>
                 <div className="history__buttons">
                     <Button onClick={() => toggleOpen(true)} className="history__button">
