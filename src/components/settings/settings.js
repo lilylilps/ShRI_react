@@ -138,7 +138,14 @@ function Settings() {
                     </Link>
                 </div>
 
-                {modalIsOpen && <Alert title={"Failed to clone repository"} subtitle={"Please, try again."} duration={2000} />}
+                {modalIsOpen &&
+                    <Alert
+                        title={"Failed to clone repository"}
+                        subtitle={"Please, try again."}
+                        onClose={setIsOpen}
+                        duration={2000}
+                    />
+                }
             </form>
         </>
     );
