@@ -1,0 +1,28 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E6E6E6;
+    font-family: 'YS Text';
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0px 6px;
+    border: 2px solid transparent;
+}
+
+.button:hover {
+    background: #DBDBDB;
+}
+
+.button:focus {
+    background: #E6E6E6;
+    border: 2px solid #B3B3B3;
+    box-sizing: border-box;
+}
+
+.button:disabled {
+    background: #F2F2F2;
+    cursor: initial;
+}

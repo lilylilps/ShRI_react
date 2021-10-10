@@ -1,0 +1,38 @@
+.alert__content {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    width: 250px;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 6px 16px rgba(67, 68, 69, 0.3);
+}
+
+.alert__overlay {
+    position: fixed;
+    inset: 0px;
+}
+
+.alert__title {
+    color: #ff0000;
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 12px;
+}
+
+.alert__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .alert__content {
+        right: 5%;
+        bottom: 10%;
+    }
+}

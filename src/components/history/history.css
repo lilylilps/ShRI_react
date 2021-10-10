@@ -1,0 +1,161 @@
+.history {
+    flex-grow: 1;
+}
+
+.history__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 100px;
+}
+
+.history__buttons {
+    display: flex;
+}
+
+.history__button {
+    max-height: 28px;
+}
+
+.history__settings-text {
+    margin-left: 6px;
+}
+
+.history__repository-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.history__button-settings {
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    padding: 7px;
+    margin-left: 8px;
+}
+
+.history__list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 100px;
+}
+
+.history__show-button {
+    align-self: flex-start;
+    padding: 0 13px;
+}
+
+.history__button-text {
+    font-size: 13px;
+    line-height: 28px;
+    margin: 0;
+}
+
+  
+.popup__content {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    height: 146px;
+    width: 447px;
+    left: 50%;
+    top: 50%;
+    border-radius: 4px;
+}
+
+.popup__overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    inset: 0px;
+}
+
+.modal__title {
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 12px;
+}
+
+.modal__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+}
+
+.modal__input-block {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    padding: 7px;
+    margin: 12px 0;
+}
+
+.modal__input-block:focus-within {
+    border: 2px solid #B3B3B3;
+    outline: none;
+}
+
+.modal__input-field {
+    font-family: YS Text;
+    font-size: 13px;
+    line-height: 16px;
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 100%;
+}
+
+.modal__button-clear {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    height: 16px;
+}
+
+.modal__buttons {
+    display: flex;
+}
+
+.modal-text__button {
+    text-align: center;
+    font-size: 13px;
+    line-height: 32px;
+    margin: 0;
+}
+
+.modal-button__yellow {
+    padding: 0 20px;
+    background: #FFCC00;
+}
+
+.modal-button__cancel {
+    margin-left: 10px;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .history__header {
+        padding: 12px 16px;
+    }
+    .history__button {
+        padding: 7px;
+    }
+    .history__list {
+        padding: 8px 16px;
+    }
+    .history__show-button {
+        width: 100%;
+    }
+    .popup__content {
+        width: 250px;
+        height: 165px;
+    }
+}

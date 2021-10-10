@@ -1,0 +1,104 @@
+.history__item-commit {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: flex-start;
+}
+
+.history__item-commit_header {
+    display: flex;
+    align-items: baseline;
+}
+
+.history__item-commit_title {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.history__item-commit_number {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.history__item-commit_info {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.history__item-commit_data {
+    display: flex;
+    align-items: center;
+}
+.history__item-commit_icon {
+    max-height: 8px;
+    margin-right: 4px;
+}
+
+.history__item-commit_branch {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.history__item-commit_id {
+    font-size: 13px;
+    line-height: 16px;
+    opacity: 0.65;
+    margin: 0 0 0 4px;
+}
+
+.history__item-commit_author {
+    display: flex;
+    margin-left: 10px;
+}
+
+.history__item-commit_author-icon {
+    opacity: 0.4;
+    margin-right: 6px;
+}
+
+.history__item-commit_author-name {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.green {
+    color: #00B341;
+}
+
+.orange {
+    color: #FF9A00;
+}
+
+.red {
+    color: #FF3333;;
+}
+
+@media (max-width: 768px) {
+    .history__item-commit {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #F0F2F3;
+    }
+    .history__item-commit_header {
+        flex-direction: column;
+    }
+    .history__item-commit_title {
+        text-align: left;
+        margin-top: 8px;
+    }
+    .history__item-commit_info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .history__item-commit_data {
+        margin-bottom: 8px;
+    }
+    .history__item-commit_author {
+        margin-left: 0;
+    }
+    
+}

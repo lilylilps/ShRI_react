@@ -1,0 +1,12 @@
+.history__item-status {
+    max-width: 21px;
+    max-height: 21px;
+}
+
+@media (max-width: 768px) {
+    .history__item-status {
+        max-width: 15px;
+        max-height: 15px;
+        margin-top: 3px;
+    }
+}
